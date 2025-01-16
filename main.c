@@ -6,82 +6,87 @@
 /*   By: pede-jes <pede-jes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 16:26:47 by pede-jes          #+#    #+#             */
-/*   Updated: 2025/01/16 14:01:58 by pede-jes         ###   ########.fr       */
+/*   Updated: 2025/01/16 16:43:31 by pede-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <limits.h>
 #include <stdio.h>
 #include <unistd.h>
-#include <limits.h>
 
-int		ft_string_len(char *string);
-int		ft_atoi(char *string);
-void	ft_sa(int martx[]);
-int		ft_cont_martx(int martx[]);
+long	ft_string_len(char *string);
+long	ft_atoi(char *string);
+void	ft_sa(long martx[]);
+long	ft_len_array(long martx[]);
+void	ft_print_array(long martx[]);
 
 int	main(int argc, char *argv[])
 {
-	int	i;
-	int	j;
-	int	stack_a[argc];
-	int	stack_b[argc];
+	long	i;
+	long	j;
+	long	stack_a[argc];
+	long	stack_b[argc];
 
 	i = 1;
 	j = 0;
 	while (j < argc - 1)
 	{
 		stack_a[j] = ft_atoi(argv[i]);
-		printf("%p\n", stack_a[j]);
 		i++;
 		j++;
 	}
-	j = 0;
-	while (j < argc - 1)
-	{
-		printf("Original:%d\n", stack_a[j]);
-		j++;
-	}
+	stack_a[j] = '\0';
+	printf("\n----------------------INICIO------------------------\n");
+	ft_print_array(stack_a);
 	ft_sa(stack_a);
-	j = 0;
-	while (j < argc - 1)
-	{
-		printf("invertida:%d\n", stack_a[j]);
-		j++;
-	}
+	printf("\n---------------------INVERTIDO----------------------\n");
+	ft_print_array(stack_a);
 	return (0);
 }
-
-void	ft_sa(int martx[])
+void	ft_print_array(long martx[])
 {
-	int	i;
-	int	temp;
+	long	i;
+	long	len_array;
 
-	i = ft_cont_martx(martx);
-	temp = martx[i-1];
-	martx[i-1] = martx[0];
+	i = 0;
+	len_array = ft_len_array(martx);
+	while (martx[i])
+	{
+		printf("%ld\n", martx[i]);
+		i++;
+	}
+}
+
+void	ft_sa(long martx[])
+{
+	long	i;
+	long	temp;
+
+	i = ft_len_array(martx);
+	temp = martx[i - 1];
+	martx[i - 1] = martx[0];
 	martx[0] = temp;
 }
 
-int	ft_cont_martx(int martx[])
+long	ft_len_array(long martx[])
 {
-	int	i;
+	long	i;
 
 	i = 0;
 	while (martx[i])
 	{
 		i++;
 	}
-	return(i);
+	return (i);
 }
-void	ft_pb(int martx[], int martry[])
+void	ft_pb(long martx[], long martry[])
 {
-	
 }
-int	ft_atoi(char *string)
+long	ft_atoi(char *string)
 {
-	int	number;
-	int	signal;
-	int	i;
+	long	number;
+	long	signal;
+	long	i;
 
 	signal = 1;
 	i = 0;
