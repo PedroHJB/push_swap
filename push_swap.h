@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   Push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pede-jes <pede-jes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/15 18:02:59 by pede-jes          #+#    #+#             */
-/*   Updated: 2025/01/15 18:26:34 by pede-jes         ###   ########.fr       */
+/*   Created: 2025/02/10 17:06:08 by pede-jes          #+#    #+#             */
+/*   Updated: 2025/02/10 17:11:43 by pede-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_BONUS_H
-# define GET_NEXT_LINE_BONUS_H
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-# ifndef STACK_A
-#  define STACK_A[]
-# endif
+typedef struct s_list
+{
+	int value;
+	int next;
 
+	struct s_list *next;
+}	t_list;
+
+# include <limits.h>
 # include <stdio.h>
+# include <stdlib.h>
 # include <unistd.h>
 
-#endif
 
+
+#endif
