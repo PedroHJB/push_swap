@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pede-jes <pede-jes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/10 17:06:08 by pede-jes          #+#    #+#             */
-/*   Updated: 2025/02/10 17:11:43 by pede-jes         ###   ########.fr       */
+/*   Created: 2024/11/04 06:07:03 by pede-jes          #+#    #+#             */
+/*   Updated: 2024/11/07 16:50:18 by pede-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-typedef struct s_list
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	int value;
-	int next;
+	size_t	endpoint;
 
-	struct s_list *next;
-}	t_list;
-
-# include <limits.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-
-
-
-#endif
+	if (!s1 || !set)
+		return (NULL);
+	while (*s1 && ft_strchr(set, *s1))
+		s1++;
+	endpoint = ft_strlen(s1);
+	while (endpoint && ft_strchr(set, s1[endpoint]))
+		endpoint--;
+	return (ft_substr(s1, 0, endpoint + 1));
+}
