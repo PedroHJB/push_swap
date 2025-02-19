@@ -1,19 +1,15 @@
 NAME := push_swap
 
-CFLAGS := -Wall -Wextra -Werror
+CFLAGS := -Wall -Wextra -Werror -g3
 RM := rm -rf
 LIB_PATH := ./libs/libft/
 LIB_NAME := libft.a
 BIN_PATH := ./bin/
 SRC_PATH := ./src/
 INCLUDES = ./includes/push_swap.h
-SRCS := main.c
+SRCS := main.c check_args.c allocate_args.c
 OBJS := $(addprefix $(BIN_PATH), $(SRCS:%.c=%.o))
 SRCS := $(addprefix $(SRC_PATH), $(SRCS))
-VALGRIND = valgrind
-VALGRIND_FLAGS = --leak-check=full --show-leak-kinds=all --track-origins=yes 
-GDB = gdb
-GDB_FLAGS = -tui -args
 
 all: $(BIN_PATH) $(LIB_PATH) $(NAME)
 
@@ -29,11 +25,9 @@ $(LIB_PATH):
 $(BIN_PATH):
 	mkdir -p $@
 
-valgrind: all
-	$(VALGRIND) $(VALGRIND_FLAGS) ./$(NAME) $(PUSH_SWAP)
 
-gdb: all
-	$(GDB) $(GDB_FLAGS) ./$(NAME) $(PUSH_SWAP)
+valgrind: all
+	$(VALGRIND) $(VALGRIND_FLAGS) ./$(NAME) $(PUSH_SWAP) 
 
 clean:
 	$(RM) $(BIN_PATH)
