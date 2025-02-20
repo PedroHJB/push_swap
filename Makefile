@@ -7,7 +7,7 @@ LIB_NAME := libft.a
 BIN_PATH := ./bin/
 SRC_PATH := ./src/
 INCLUDES = ./includes/push_swap.h
-SRCS := main.c check_args.c allocate_args.c
+SRCS := main.c check_args.c allocate_args.c utils.c sort_low.c
 OBJS := $(addprefix $(BIN_PATH), $(SRCS:%.c=%.o))
 SRCS := $(addprefix $(SRC_PATH), $(SRCS))
 

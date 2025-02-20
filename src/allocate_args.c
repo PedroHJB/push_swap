@@ -6,7 +6,7 @@
 /*   By: pede-jes <pede-jes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 14:10:30 by pede-jes          #+#    #+#             */
-/*   Updated: 2025/02/19 17:34:15 by pede-jes         ###   ########.fr       */
+/*   Updated: 2025/02/20 10:29:34 by pede-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,17 +94,3 @@ t_list	*get_next_min(t_list **stack)
 	
 }
 
-void index_stack(t_list **stack)
-{
-	t_list *head;
-	int	index;
-
-	index = 0;
-	head = get_next_min(stack);
-	while (head)
-	{
-		head->index = index ++;
-		get_next_min(stack);
-	}
-	
-}
