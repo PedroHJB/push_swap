@@ -6,11 +6,11 @@
 /*   By: pede-jes <pede-jes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 15:42:58 by pede-jes          #+#    #+#             */
-/*   Updated: 2025/02/20 10:29:02 by pede-jes         ###   ########.fr       */
+/*   Updated: 2025/02/21 10:51:06 by pede-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void	ft_check_args(int argc, char **argv)
 {

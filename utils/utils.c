@@ -6,11 +6,11 @@
 /*   By: pede-jes <pede-jes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 10:27:43 by pede-jes          #+#    #+#             */
-/*   Updated: 2025/02/20 13:32:17 by pede-jes         ###   ########.fr       */
+/*   Updated: 2025/02/21 11:05:20 by pede-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 void index_stack(t_list **stack)
 {
