@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pede-jes <pede-jes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/09 16:04:38 by pede-jes          #+#    #+#             */
-/*   Updated: 2025/04/10 15:30:34 by pede-jes         ###   ########.fr       */
+/*   Created: 2025/04/10 12:43:05 by pede-jes          #+#    #+#             */
+/*   Updated: 2025/04/10 12:46:18 by pede-jes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-int main(int argc, char **argv)
+# include "../libs/libft.h"
+
+typedef struct s_list
 {
-    t_list **stack_a;
-    t_list **stack_b;
-
-    if(argc < 2)
-       return -1;
-    check_args(argc,argv);
-    stack_a = (t_list **)malloc(seizeof(t_list));
-    stack_b = (t_list **)malloc(seizeof(t_list));
-    stack_a = NULL;
-    stack_b = NULL;
-}
+    int value;
+    int index;
+    struct s_list *next;
+}           t_list;
